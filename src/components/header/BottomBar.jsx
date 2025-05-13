@@ -2,7 +2,7 @@ import React from 'react'
 
 const BottomBar = () => {
   return (
-    <div>BottomBar</div>
+    <div>this is my working part</div>
   )
 }
 
