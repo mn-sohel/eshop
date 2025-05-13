@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import  Container  from '../../components/commonLayouts/Container'
 import { IoSearch } from 'react-icons/io5'
-import CartIcon from '../../icons/cartIcon'
+import CartIcon from '../../icons/CartIcon'
 import UserIcon from '../../icons/UserIcon'
 
 const MiddleBar = () => {
