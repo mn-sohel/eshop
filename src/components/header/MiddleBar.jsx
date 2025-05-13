@@ -7,7 +7,7 @@ import UserIcon from '../../icons/UserIcon'
 const MiddleBar = () => {
   return (
     <Container>
-      <div className='flex  justify-between items-center pt-8'>
+      <div className='flex  justify-between items-center py-8'>
         <div>
           <img src="images/logo.png" alt="logo" />
         </div>
