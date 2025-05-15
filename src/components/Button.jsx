@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ({text, bg="#FF624C", fontName="Montserrat", fontWeight="bold", size="xl", color="white", paddingY="16", paddingX="40", radius="10"}) => {
+const Button = ({text, bg="#FF624C", fontName="Montserrat", fontWeight="bold", color="white", paddingY="16", paddingX="40", radius="10"}) => {
   return (
     <button 
     className={`bg-[${bg}] font-${fontName} font-${fontWeight}  text-${color} rounded-[${radius}px]`}
