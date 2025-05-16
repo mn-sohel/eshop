@@ -1,18 +1,58 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FaAngleDown, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const TopRightBar = () => {
     const [selectedCountry, setSelectedCountry] =  useState(null);
     const [isOpen, setIsOpen] = useState(false);
+     const [selectedCurrency, setSelectedCurrency] = useState("USD");
+    
+      const countryDrowdownRef = useRef(null);
+
+        useEffect(() => {
+          const handleClickOutSide = (event) => {
+            if(countryDrowdownRef.current && !countryDrowdownRef.current.contains(event.target)){
+              setIsOpen(false)
+            }
+          }
+          document.addEventListener('mousedown', handleClickOutSide)
+          // return () => {
+          //   document.removeEventListener('mousedown', handleClickOutSide)
+          // }
+        },[])
+      
 
       const countries = [
-        { name: 'United State', value: 'US', flag: 'https://flagcdn.com/16x12/us.png' },
-        { name: 'Canada', value: 'CA', flag: 'https://flagcdn.com/16x12/ca.png' },
-        { name: 'United King', value: 'GB', flag: 'https://flagcdn.com/16x12/gb.png' },
-        { name: 'Australia', value: 'AU', flag: 'https://flagcdn.com/16x12/au.png' },
-        { name: 'Germany', value: 'DE', flag: 'https://flagcdn.com/16x12/de.png' },
-        { name: 'France', value: 'FR', flag: 'https://flagcdn.com/16x12/fr.png' },
+        { name: "Spain", value: "es" , flag: "https://flagcdn.com/16x12/es.png" },
+        { name: "Germany", value: "de" , flag: "https://flagcdn.com/16x12/de.png" },
+        { name: "France", value: "fr" , flag: "https://flagcdn.com/16x12/fr.png" },
+        { name: "United State", value: "us" , flag: "https://flagcdn.com/16x12/us.png" },
+        { name: "Italy", value: "it" , flag: "https://flagcdn.com/16x12/it.png" },
+        { name: "Portugal", value: "pt" , flag: "https://flagcdn.com/16x12/pt.png" },
+        { name: "Netherlands", value: "nl" , flag: "https://flagcdn.com/16x12/nl.png" },
+        { name: "Sweden", value: "se" , flag: "https://flagcdn.com/16x12/se.png" },
+        { name: "Norway", value: "no" , flag: "https://flagcdn.com/16x12/no.png" },
+        { name: "Denmark", value: "dk" , flag: "https://flagcdn.com/16x12/dk.png" },
+        { name: "Bangladesh", value: "bd" , flag: "https://flagcdn.com/16x12/bd.png" },
+        { name: "India", value: "in" , flag: "https://flagcdn.com/16x12/in.png" },
+        { name: "Pakistan", value: "pk" , flag: "https://flagcdn.com/16x12/pk.png" },
+        { name: "Nepal", value: "np" , flag: "https://flagcdn.com/16x12/np.png" },
+        { name: "Bhutan", value: "bt" , flag: "https://flagcdn.com/16x12/bt.png" },
+        { name: "Sri Lanka", value: "lk" , flag: "https://flagcdn.com/16x12/lk.png" },
+        { name: "Maldives", value: "mv" , flag: "https://flagcdn.com/16x12/mv.png" },
+            
+       
+    ];
+
+     const currency = [
+        { name: "USD", value: "USD" },
+        { name: "BDT", value: "BDT" },
+        { name: "EUR", value: "EUR" },
+        { name: "GBP", value: "GBP" },
+        { name: "INR", value: "INR" },
+        { name: "JPY", value: "JPY" },
+        { name: "AUD", value: "AUD" },
+        { name: "CAD", value: "CAD" }
     ]
 
     const handleSelect = (country) => {
@@ -23,16 +63,23 @@ const TopRightBar = () => {
   return (
     <div className='flex justify-end items-center gap-[49px]'>
         <div>
-          <select 
+          <select
+            className='cursor-pointer' 
             name="currency"
+            value={selectedCurrency}
+            onChange={(e)=>{
+              const currency = e.target.value
+              setSelectedCurrency(currency)
+            }}
             >
-                <option value="USD">USD</option>
-                <option value="BDT">BDT</option>
-                <option value="BDT">JPY</option>
+              {currency.map((cur, index)=>(
+                <option key={index} value={cur.value}>{cur.name}</option>
+              ))}
              
             </select>
         </div>
-        <div className='relative after:content-[""] after:absolute after:w-[1px] after:h-[32px] after:bg-[#BFBFBF] after:left-[-25px] after:top-[50%] after:-translate-y-1/2 before:content-[""] before:absolute before:w-[1px] before:h-[32px] before:bg-[#BFBFBF] before:left-[173px] before:top-[50%] before:-translate-y-1/2'>
+        <div className='relative after:content-[""] after:absolute after:w-[1px] after:h-[32px] after:bg-[#BFBFBF] after:left-[-25px] after:top-[50%] after:-translate-y-1/2 before:content-[""] before:absolute before:w-[1px] before:h-[32px] before:bg-[#BFBFBF] before:left-[173px] before:top-[50%] before:-translate-y-1/2' ref={countryDrowdownRef}
+        >
         {/* <img src="https://flagcdn.com/16x12/us.png" />  */}
             <select 
             name="country"
@@ -50,8 +97,8 @@ const TopRightBar = () => {
 
             {/* custom dropdown */}
             <div 
-            className='w-[175px] p-2 cursor-pointer flex items-center'
             onClick={()=>setIsOpen(!isOpen)}
+            className='w-[175px] p-2 cursor-pointer flex items-center'
             >
               {selectedCountry ?
               <>
@@ -65,30 +112,26 @@ const TopRightBar = () => {
             </div>
             {/* option list */}
             {isOpen && (
-              <ul className='absolute w-full border border-gray-300 bg-white shadow-lg z-10'>
-                {countries.map((country,index) => (
+              <ul 
+              className='absolute w-full border border-gray-300 bg-white shadow-lg z-10'>
+                {countries.map((country) => (
                   <li 
-                  key={country.value}
-                  className='flex items-center gap-2 p-2 hover:bg-gray-200 cursor-pointer'
-                  onClick={()=>handleSelect(country)}
-                  >
-                    <img src={country?.flag} alt={country?.name} className='w-5 h-4 mr-2' />
-                    {country.name}
+                    onClick={()=>handleSelect(country)}
+                    
+                    key={country.value}
+                    className='flex items-center gap-2 p-2 hover:bg-gray-200 cursor-pointer'
+                    >
+                      <img src={country?.flag} alt={country?.name} className='w-5 h-4 mr-2' />
+                      {country.name}
                   </li>
                 ))}
               </ul>
             )}
         </div>
         <div className='flex items-center gap-5'>
-          <Link to={'#'}>
-            <FaFacebookF />
-          </Link>
-          <Link to={'#'}>
-            <FaTwitter />
-          </Link>
-          <Link to={'#'}>
-            <FaInstagram />
-          </Link>
+          <Link to={'#'}> <FaFacebookF /> </Link>
+          <Link to={'#'}><FaTwitter /> </Link>
+          <Link to={'#'}><FaInstagram /></Link>
         </div>
     </div>
   )
