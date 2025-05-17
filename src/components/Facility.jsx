@@ -30,7 +30,7 @@ const Facility = () => {
                 </div>
                 <div className='flex items-center gap-6'>
                     <div>
-                        <ShippingIcon width="64px"  />
+                        <ShippingIcon  />
                     </div>
                     <div>
                         <h6 className='font-["Montserrat"] font-bold text-base'>Shipping</h6>

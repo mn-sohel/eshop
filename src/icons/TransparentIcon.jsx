@@ -1,8 +1,8 @@
 import React from 'react'
 
-const TransparentIcon = ({width=34, height=34, color="#303030"}) => {
+const TransparentIcon = ({width=40, height=40, color="#303030"}) => {
   return (
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width={width} height={height} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g clip-path="url(#clip0_2_358)">
   {/* <mask id="mask0_2_358" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
   <path d="M0 3.8147e-06H40V40H0V3.8147e-06Z" fill="white"/>
