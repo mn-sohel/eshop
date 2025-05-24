@@ -41,8 +41,8 @@ const BestSeller = ({stock=false}) => {
                         <ProductLayout 
                             img={"images/bestSellerImage.png"} 
                             percentTag={true}
-                            discountRetangle={true}
-                            discountCircle={false}
+                            discountRetangle={false}
+                            discountCircle={true}
                             percentage="30%"  
                             category="TABLET" 
                             title="Tablet Pro 128 GB HD RAM 8 GB i8 1080P 4K ..." 

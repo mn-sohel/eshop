@@ -31,7 +31,7 @@ const ProductLayout = ({
                 <div className='bg-[#FF624C] py-[7px] px-5 absolute top-[-8px] right-[-9px] rounded-md font-["Montserrat"] font-bold text-base text-white'>          {percentage}
                 </div>
                 ) : discountCircle ? (
-                    <div className='bg-[#FF624C] py-[7px] px-5 absolute top-[-8px] right-[-9px] rounded-md font-["Montserrat"] font-bold text-base text-white'>{percentage}
+                    <div className="font-['Montserrat'] text-base text-white font-bold bg-[#FF624C] w-[60px] h-[60px] flex justify-center items-center rounded-full absolute right-[0] top-[0px]">{percentage}
                     </div>
                 ) : null)}
             <div className='flex items-center absolute bottom-[6px] left-[47%] translate-x-[-50%] gap-5 scale-0 group-hover:scale-100 duration-300'>
