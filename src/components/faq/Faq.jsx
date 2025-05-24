@@ -40,7 +40,7 @@ const Faq = () => {
                     />
                 ))}
             </div>
-            <div className='flex flex-col'>
+            <div className=''>
                 <h2 className='max-w-[306px] font-["Poppins"] font-semibold text-4xl text-[#303030]'>Frequently Asked Questions</h2>
                 <p className='max-w-[392px] font-["Montserrat"] font-normal text-xl text-[#303030] mt-6 mb-16'>Questions that get asked the most by our clients. Get any burning questions?</p>
                 <Button text={"Ask A Question"}/>
