@@ -38,11 +38,11 @@ const FeaturedProduct = ({stock=false}) => {
     // autoplay: true,
     autoplaySpeed: 1000,
   };
+  
   return (
 
     <div className='mt-[80px]'>
       <Container>
-        {/* <div className='flex gap-1'> */}
         <div className='flex justify-between mb-12'>
             <div>
               <h2 className='font-["Poppins"] font-semibold text-[36px]'>Featured Products</h2>
@@ -119,7 +119,6 @@ const FeaturedProduct = ({stock=false}) => {
               stockAmount="250"
             />
         </Slider>
-        {/* </div> */}
     </Container>
     </div>
   )

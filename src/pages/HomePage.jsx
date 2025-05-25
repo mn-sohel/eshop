@@ -6,6 +6,7 @@ import OfferSection from '../components/OfferSection'
 import NewProduct from '../components/NewProduct'
 import BestSeller from '../components/BestSeller'
 import Faq from '../components/faq/Faq'
+import SpringSale from '../components/SpringSale'
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <FeaturedProduct/>
       <OfferSection/>
       <NewProduct/>
+      <SpringSale/>
       <BestSeller/>
       <Faq/>
     </>

@@ -8,12 +8,13 @@ const ProductLayout = ({
     discountRetangle,
     discountCircle,
     percentage="20%", 
-    category,title, 
+    category,
+    title, 
     rating, 
     totalRating, 
     price, 
     border, 
-    bg, 
+    bg,
     stock, 
     stockAmount, 
     img
@@ -24,14 +25,13 @@ const ProductLayout = ({
   return (
     <div style={{background: bg}} className='border border-transparent hover:border-[#C3C3C3] duration-300 p-6 group rounded-lg'>
         <div className='relative'>
-            {/* <img className='w-full' src="images/productImage.png" alt="product_image" /> */}
             <img className='w-full' src={img}  />
             {percentTag && (
                 discountRetangle ? (
                 <div className='bg-[#FF624C] py-[7px] px-5 absolute top-[-8px] right-[-9px] rounded-md font-["Montserrat"] font-bold text-base text-white'>          {percentage}
                 </div>
                 ) : discountCircle ? (
-                    <div className="font-['Montserrat'] text-base text-white font-bold bg-[#FF624C] w-[60px] h-[60px] flex justify-center items-center rounded-full absolute right-[0] top-[0px]">{percentage}
+                    <div className="font-['Montserrat'] text-base text-white font-bold bg-[#FF624C] w-[100px] h-[100px] flex justify-center items-center rounded-full absolute right-[0] top-[0px]">{percentage}
                     </div>
                 ) : null)}
             <div className='flex items-center absolute bottom-[6px] left-[47%] translate-x-[-50%] gap-5 scale-0 group-hover:scale-100 duration-300'>
