@@ -123,9 +123,7 @@ const SpringSale = () => {
                     totalRating="100" 
                     price="4599.00" 
                     border={true} 
-                    // bg="transparent" 
                     bg="#EAEAEA" 
-                    // bg={"#fff"} 
                     stock={true} 
                     stockAmount="50"
                     padding={"p-10"}
@@ -142,16 +140,14 @@ const SpringSale = () => {
                     rating="5" 
                     totalRating="100" 
                     price="819.00" 
-                    border={true} 
-                    // bg="transparent" 
-                    bg={"#EAEAEA"}
-                    // bg={"#fff"} 
+                    border={true}  
+                    bg="#EAEAEA"
                     stock={true} 
                     stockAmount="LIMITED STOCK"
                     padding={"p-10"}
                     />
                   <ProductLayout 
-                  className = "hover:!bg-[#fff]"
+                    className = "hover:!bg-[#fff]"
                     img={"images/springBox.png"} 
                     percentTag={false} 
                     category="LAPTOP" 
@@ -159,45 +155,39 @@ const SpringSale = () => {
                     rating="5" 
                     totalRating="100" 
                     price="1199.00" 
-                    border={true} 
-                    // bg="transparent" 
-                    bg={"#EAEAEA"}
-                    // bg={"#fff"} 
+                    border={true}  
+                    bg="#EAEAEA"
                     stock={true} 
                     stockAmount="50"
                     padding={"p-10"}
-                    
-                    />
+                  />
                   <ProductLayout 
-                  className = "hover:!bg-[#fff]"
+                    className = "hover:!bg-[#fff]"
                     img={"images/springBox.png"} 
                     percentTag={false} category="CAMERA" 
                     title="VBI Mini 2 Fly More Combo Drone Sjrc F22S 4K Pro Ptz 5 Km Version Alpha ..." 
                     rating="1" 
                     totalRating="70" 
                     price="79.00" 
-                    border={true} 
-                    // bg="transparent" 
-                    bg={"#EAEAEA"}
-                    // bg={"#fff"} 
+                    border={true}  
+                    bg="#EAEAEA"
                     stock={true} 
                     stockAmount="LIMITED STOCK"
                     padding={"p-10"}
-                  />
+                    />
                   <ProductLayout 
                   className = "hover:!bg-[#fff]"
-                    img={"images/springBox.png"} 
-                    percentTag={false} 
-                    category="TELEVISION"  
-                    title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB ..." 
-                    rating="2" totalRating="20" 
-                    price="2799.00" 
-                    border={true} 
-                    // bg="transparent" 
-                    bg={"#EAEAEA"}
-                    // bg={"#fff"} 
-                    stock={true} 
-                    stockAmount="50"
+                  img={"images/springBox.png"} 
+                  percentTag={false} 
+                  category="TELEVISION"  
+                  title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB ..." 
+                  rating="2" totalRating="20" 
+                  price="2799.00" 
+                  border={true}  
+                  bg="#EAEAEA"
+                  stock={true} 
+                  stockAmount="50"
+                  padding={"p-10"}
                   />
               </Slider>
             </div>

@@ -77,7 +77,7 @@ const FooterBottom = () => {
             </div>
         </div>
         {/* <div className=''></div> */}
-         <div className='flex justify-between mb-27 mt-2'>
+         <div className='flex justify-between mb-27 mt-2 font-["Montserrat"] font-normal text-sm text-[#303030]'>
           <div>
             <span className='font-["Montserrat"] text-[14px] text-[#303030] leading-5 font-normal'>Copyright © 2023 E-Shop. All Rights Reserved.</span>
           </div>
