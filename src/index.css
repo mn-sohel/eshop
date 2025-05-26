@@ -7,3 +7,8 @@
 .slick-next:before{
     display: none;
 }
+
+
+.springGap.slick-slider .slick-track {
+  @apply flex gap-6;
+}

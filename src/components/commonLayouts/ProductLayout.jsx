@@ -24,7 +24,7 @@ const ProductLayout = ({
     
   return (
     <div style={{background: bg}} className='border border-transparent hover:border-[#C3C3C3] duration-300 p-6 group rounded-lg'>
-        <div className='relative'>
+        <div className='relative group-hover:bg-amber-400'>
             <img className='w-full' src={img}  />
             {percentTag && (
                 discountRetangle ? (
@@ -34,7 +34,7 @@ const ProductLayout = ({
                     <div className="font-['Montserrat'] text-base text-white font-bold bg-[#FF624C] w-[100px] h-[100px] flex justify-center items-center rounded-full absolute right-[0] top-[0px]">{percentage}
                     </div>
                 ) : null)}
-            <div className='flex items-center absolute bottom-[6px] left-[47%] translate-x-[-50%] gap-5 scale-0 group-hover:scale-100 duration-300'>
+            <div className='flex items-center absolute bottom-[6px] left-[47%] translate-x-[-50%] gap-5 scale-0 group-hover:bg-amber-400 group-hover:scale-100 duration-300'>
                 <div className='w-[50px] h-[50px] rounded-full bg-white border border-[#FF624C] flex items-center justify-center text-[25px] text-[#FF624C] hover:bg-[#FF624C] hover:text-white duration-300 cursor-pointer'>
                     <IoCartOutline />
                 </div>

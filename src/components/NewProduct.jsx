@@ -60,6 +60,20 @@ const NewProduct = ({stock=false}) => {
               img={"images/newProductImg.png"} 
               percentTag={false} 
               category="AUDIO" 
+              title="Ultra Tablet Qwerty HD 10765 Series Low Pri..." 
+              rating="5" 
+              totalRating="100" 
+              price="799.00" 
+              border={true} 
+              bg="transparent" 
+              stock={stock} 
+              stockAmount="260"
+            />
+            
+            {/* <ProductLayout 
+              img={"images/newProductImg.png"} 
+              percentTag={true} 
+              category="AUDIO" 
               title="QuietComfort 45 Wireless Headphone ..." 
               rating="5" 
               totalRating="120" 
@@ -68,7 +82,7 @@ const NewProduct = ({stock=false}) => {
               bg="transparent" 
               stock={stock} 
               stockAmount="150"
-            />
+            /> */}
             <ProductLayout 
               img={"images/newProductImg.png"} 
               percentTag={true}
