@@ -9,6 +9,28 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
+// const springSaleData = [
+//   {
+//     img={"images/springBox.png"}, 
+//     percentTag={true}, 
+//     discountRetangle={false}
+//     discountCircle={true}
+//     percentage="10%" 
+//     category="TELEVISION" 
+//     title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB ..." 
+//     rating="5" 
+//     totalRating="100" 
+//     price="4599.00" 
+//     border={true} 
+//     // bg="transparent" 
+//     // bg={"#EAEAEA"} 
+//     bg={"#fff"} 
+//     stock={true} 
+//     stockAmount="50"
+//     padding={"p-10"}
+//   }
+// ]
+
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -83,25 +105,33 @@ const SpringSale = () => {
             </div>
             <div className='max-w-[902px]'>
               <Slider {...settings} className='springGap'>
-                  <ProductLayout 
+                {/* {
+                  springSaleData.map((item,index) => (
+
+                  ))
+                } */}
+                  <ProductLayout
+                    className = "hover:!bg-[#fff]"
                     img={"images/springBox.png"} 
                     percentTag={true} 
                     discountRetangle={false}
                     discountCircle={true}
                     percentage="10%" 
                     category="TELEVISION" 
-                    title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB Movie ..." 
+                    title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB ..." 
                     rating="5" 
                     totalRating="100" 
                     price="4599.00" 
                     border={true} 
                     // bg="transparent" 
-                    // bg={"#EAEAEA"} 
-                    bg={"#fff"} 
+                    bg="#EAEAEA" 
+                    // bg={"#fff"} 
                     stock={true} 
                     stockAmount="50"
-                  />
+                    padding={"p-10"}
+                    />
                   <ProductLayout 
+                  className = "hover:!bg-[#fff]"
                     img={"images/springBox.png"} 
                     percentTag={true} 
                     discountRetangle={false}
@@ -114,27 +144,32 @@ const SpringSale = () => {
                     price="819.00" 
                     border={true} 
                     // bg="transparent" 
-                    // bg={"#EAEAEA"}
-                    bg={"#fff"} 
+                    bg={"#EAEAEA"}
+                    // bg={"#fff"} 
                     stock={true} 
                     stockAmount="LIMITED STOCK"
-                  />
+                    padding={"p-10"}
+                    />
                   <ProductLayout 
+                  className = "hover:!bg-[#fff]"
                     img={"images/springBox.png"} 
                     percentTag={false} 
                     category="LAPTOP" 
-                    title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB Movie ..." 
+                    title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB ..." 
                     rating="5" 
                     totalRating="100" 
                     price="1199.00" 
                     border={true} 
                     // bg="transparent" 
-                    // bg={"#EAEAEA"}
-                    bg={"#fff"} 
+                    bg={"#EAEAEA"}
+                    // bg={"#fff"} 
                     stock={true} 
                     stockAmount="50"
-                  />
+                    padding={"p-10"}
+                    
+                    />
                   <ProductLayout 
+                  className = "hover:!bg-[#fff]"
                     img={"images/springBox.png"} 
                     percentTag={false} category="CAMERA" 
                     title="VBI Mini 2 Fly More Combo Drone Sjrc F22S 4K Pro Ptz 5 Km Version Alpha ..." 
@@ -143,22 +178,24 @@ const SpringSale = () => {
                     price="79.00" 
                     border={true} 
                     // bg="transparent" 
-                    // bg={"#EAEAEA"}
-                    bg={"#fff"} 
+                    bg={"#EAEAEA"}
+                    // bg={"#fff"} 
                     stock={true} 
                     stockAmount="LIMITED STOCK"
+                    padding={"p-10"}
                   />
                   <ProductLayout 
+                  className = "hover:!bg-[#fff]"
                     img={"images/springBox.png"} 
                     percentTag={false} 
                     category="TELEVISION"  
-                    title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB Movie ..." 
+                    title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB ..." 
                     rating="2" totalRating="20" 
                     price="2799.00" 
                     border={true} 
                     // bg="transparent" 
-                    // bg={"#EAEAEA"}
-                    bg={"#fff"} 
+                    bg={"#EAEAEA"}
+                    // bg={"#fff"} 
                     stock={true} 
                     stockAmount="50"
                   />
