@@ -7,7 +7,7 @@ const TopBar = () => {
   return (
     <div className='border-b border-[#BFBFBF] border-slolid py-[22px]'>
         <Container>
-            <div className='flex justify-between items-center font-["Montserrat"] font-normal text-sm'>
+            <div className='flex justify-between items-center font-["Montserrat"] font-normal text-sm text-[#303030]'>
                <TopLeftBar/>
                 <TopRightBar/>
             </div>

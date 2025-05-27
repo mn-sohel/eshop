@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { FaAngleDown, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaAngleDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import FacebookIcon from '../../../icons/FacebookIcon';
+import InstagramIcon from '../../../icons/InstagramIcon';
+import TwitterIcon from '../../../icons/TwitterIcon';
+import ArrowDownIcon from '../../../icons/ArrowDownIcon';
 
 const TopRightBar = () => {
     const [selectedCountry, setSelectedCountry] =  useState(null);
@@ -61,7 +65,7 @@ const TopRightBar = () => {
       
     }
   return (
-    <div className='flex justify-end items-center gap-[49px]'>
+    <div className='flex justify-end items-center gap-x-6'>
         <div>
           <select
             className='cursor-pointer' 
@@ -78,7 +82,7 @@ const TopRightBar = () => {
              
             </select>
         </div>
-        <div className='relative after:content-[""] after:absolute after:w-[1px] after:h-[32px] after:bg-[#BFBFBF] after:left-[-25px] after:top-[50%] after:-translate-y-1/2 before:content-[""] before:absolute before:w-[1px] before:h-[32px] before:bg-[#BFBFBF] before:left-[173px] before:top-[50%] before:-translate-y-1/2' ref={countryDrowdownRef}
+        <div className='relative after:content-[""] after:absolute after:w-[1px] after:h-[32px] after:bg-[#BFBFBF] after:left-[-10px] after:top-[50%]         after:-translate-y-1/2 before:content-[""] before:absolute before:w-[1px] before:h-[32px] before:bg-[#BFBFBF] before:left-[172px] before:top-[50%] before:-translate-y-1/2' ref={countryDrowdownRef}
         >
         {/* <img src="https://flagcdn.com/16x12/us.png" />  */}
             <select 
@@ -97,18 +101,18 @@ const TopRightBar = () => {
 
             {/* custom dropdown */}
             <div 
-            onClick={()=>setIsOpen(!isOpen)}
-            className='w-[175px] p-2 cursor-pointer flex items-center'
-            >
-              {selectedCountry ?
-              <>
-                <img src={selectedCountry?.flag} alt={selectedCountry?.name} className='w-5 h-4 mr-2' />
-                <span className='mr-6'>{selectedCountry?.name}</span>
-                <FaAngleDown />
-              </>
-              :
-              <span className='gap-3 flex items-center'>Select a country <FaAngleDown /></span>
-            }
+              onClick={()=>setIsOpen(!isOpen)}
+              className='w-[175px] p-2 cursor-pointer flex items-center'
+              >
+                {selectedCountry ?
+                <>
+                  <img src={selectedCountry?.flag} alt={selectedCountry?.name} className='w-5 h-4 mr-2' />
+                  <span className='mr-6'>{selectedCountry?.name}</span>
+                  <ArrowDownIcon/>
+                </>
+                :
+                <span className='gap-3 flex items-center'>Select a country <ArrowDownIcon /></span>
+              }
             </div>
             {/* option list */}
             {isOpen && (
@@ -128,10 +132,16 @@ const TopRightBar = () => {
               </ul>
             )}
         </div>
-        <div className='flex items-center gap-5'>
-          <Link to={'#'}> <FaFacebookF /> </Link>
-          <Link to={'#'}><FaTwitter /> </Link>
-          <Link to={'#'}><FaInstagram /></Link>
+        <div className='flex items-center gap-6'>
+          <Link to={'#'}>
+            <FacebookIcon/>
+          </Link>
+          <Link to={'#'}>
+            <InstagramIcon/>
+          </Link>
+          <Link to={'#'}>
+            <TwitterIcon/>
+          </Link>
         </div>
     </div>
   )
