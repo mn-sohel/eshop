@@ -7,6 +7,7 @@ import NewProduct from '../components/NewProduct'
 import BestSeller from '../components/BestSeller'
 import Faq from '../components/faq/Faq'
 import SpringSale from '../components/SpringSale'
+import Brand from '../components/Brand'
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <SpringSale/>
       <BestSeller/>
       <Faq/>
+      <Brand/>
     </>
   )
 }
