@@ -137,10 +137,10 @@ const TopRightBar = () => {
             <FacebookIcon/>
           </Link>
           <Link to={'#'}>
-            <InstagramIcon/>
+            <TwitterIcon/>
           </Link>
           <Link to={'#'}>
-            <TwitterIcon/>
+            <InstagramIcon/>
           </Link>
         </div>
     </div>
