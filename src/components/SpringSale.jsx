@@ -90,7 +90,7 @@ const SpringSale = () => {
   };
 
   return (
-    <div className='mt-[80px]' style={{background: "url('images/springBg.png')"}}>
+    <div className='mt-[80px] bg-cover bg-no-repeat' style={{background: "url('images/springBg.png')"}}>
       <Container>
         <div className='flex justify-between items-center pt-16 pb-16'>
             <div>
