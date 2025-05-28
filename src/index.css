@@ -8,6 +8,9 @@
     display: none;
 }
 
+.feature_product_slide.slick-slider .slick-track {
+  @apply flex gap-1;
+}
 
 .springGap.slick-slider .slick-track {
   @apply flex gap-6;

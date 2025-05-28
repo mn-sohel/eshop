@@ -3,6 +3,9 @@ import Container from '../commonLayouts/Container'
 import { Link } from 'react-router-dom'
 import { IoCall, IoLocationSharp } from 'react-icons/io5'
 import { MdOutlineMail } from 'react-icons/md'
+import ReceiverFooter from '../../icons/ReceiverFooter'
+import EmailFooter from '../../icons/EmailFooter'
+import LocationFooter from '../../icons/LocationFooter'
 
 const FooterBottom = () => {
   return (
@@ -11,22 +14,23 @@ const FooterBottom = () => {
         <div className='flex border-b border-[#BFBFBF] pb-20'>
             <div className='mr-[167px]'>
               <img src="images/logo.png" alt="logo" />
-              <ul className='mt-[158px] flex flex-col gap-3'>
+              <ul className='mt-[158px] flex flex-col gap-3 font-["Montserrat"] font-normal text-base leading-6'>
                 <li className='relative pl-[30px]'>
                   <div className='absolute top-[5px] left-0'>
-                    <IoCall className='text-xl text-[#303030]'/>
+                    <ReceiverFooter/>
                   </div>
                   <Link to="tel:01256952">+1 (555) 123-4567</Link>
                 </li>
                 <li className='relative pl-[30px]'>
                   <div className='absolute top-[5px] left-0'>
-                    <MdOutlineMail className='text-xl text-[#303030]'/> 
+                    <EmailFooter/>
                   </div>
                   <Link to="mailto:information@eshop.com">information@eshop.com</Link>
                 </li>
                 <li className='relative pl-[30px]'>
                   <div className='absolute top-[5px] left-0'>
-                    <IoLocationSharp className='text-xl text-[#303030]'/>
+                    {/* <IoLocationSharp className='text-xl text-[#303030]'/> */}
+                    <LocationFooter/>
                   </div>
                   <Link to="https://maps.app.goo.gl/EX96cdL6htA2pWJA7" target='_blank'>123 Main Street, Suite 105, Anytown USA</Link>
                 </li>
@@ -34,7 +38,7 @@ const FooterBottom = () => {
             </div>
             <div className='mr-[96px]'>
               <h4 className='font-["Poppins"] font-semibold text-xl'>Links</h4>
-              <ul className='mt-6 flex flex-col gap-3'>
+              <ul className='mt-6 flex flex-col gap-3 font-["Montserrat"] font-normal text-base leading-6'>
                 <Link to={"#"}>Products List</Link>
                 <Link to={"#"}>Order Tracking</Link>
                 <Link to={"#"}>Products Guide</Link>
@@ -44,7 +48,7 @@ const FooterBottom = () => {
             </div>
             <div className='mr-[96px]'>
               <h4 className='font-["Poppins"] font-semibold text-xl'>Supports</h4>
-              <ul className='mt-6 flex flex-col gap-3'>
+              <ul className='mt-6 flex flex-col gap-3 font-["Montserrat"] font-normal text-base leading-6'>
                 <Link to={"#"}>About Us</Link>
                 <Link to={"#"}>Privacy Policy</Link>
                 <Link to={"#"}>Return Policy</Link>
@@ -55,7 +59,7 @@ const FooterBottom = () => {
             </div>
             <div className='mr-[80px]'>
               <h4 className='font-["Poppins"] font-semibold text-xl'>Categories</h4>
-              <ul className='mt-6 flex flex-col gap-3'>
+              <ul className='mt-6 flex flex-col gap-3 font-["Montserrat"] font-normal text-base leading-6'>
                 <Link to={"#"}>Computers & Tablets</Link>
                 <Link to={"#"}>Mobile Phones & Accessories</Link>
                 <Link to={"#"}>TV & Home Theater</Link>
@@ -69,7 +73,7 @@ const FooterBottom = () => {
               <h4 className='font-["Poppins"] font-semibold text-xl mb-6'>Payments</h4>
               <img src="images/payment.png" alt="logo" />
               <h4 className='mt-[73px] font-["Poppins"] font-semibold text-xl'>Follow Us</h4>
-              <ul className='mt-6 flex flex-col gap-3'>
+              <ul className='mt-6 flex flex-col gap-3 font-["Montserrat"] font-normal text-base leading-6'>
                 <Link to={"#"}>Twitter</Link>
                 <Link to={"#"}>Instagram</Link>
                 <Link to={"#"}>Facebook</Link>
@@ -77,14 +81,14 @@ const FooterBottom = () => {
             </div>
         </div>
         {/* <div className=''></div> */}
-         <div className='flex justify-between mb-27 mt-2 font-["Montserrat"] font-normal text-sm text-[#303030]'>
+         <div className='flex justify-between mb-27 mt-2 text-[#646464]'>
           <div>
-            <span className='font-["Montserrat"] text-[14px] text-[#303030] leading-5 font-normal'>Copyright © 2023 E-Shop. All Rights Reserved.</span>
+            <span className=' font-["Montserrat"] font-normal text-sm leading-5 text-[#646464]'>Copyright © 2023 E-Shop. All Rights Reserved.</span>
           </div>
 
-          <div className='flex gap-5 items-center'>
+          <div className='flex gap-5 items-center font-["Montserrat"] font-normal text-sm leading-5'>
             <h5>Privacy Policy</h5>
-            <h5 className='relative after:content-[""] after:bg-[#bfbfbf] after:absolute after:w-[1px] after:h-[16px] after:left-[-10px] after:top-[55%] after:-translate-[50%] before:content-[""] before:bg-[#bfbfbf] before:absolute before:w-[1px] before:h-[16px] before:right-[-10px] before:top-[55%] before:-translate-[50%]'>Terms & Condition</h5>
+            <h5 className='relative after:content-[""] after:bg-[#bfbfbf] after:absolute after:w-[1px] after:h-[20px] after:left-[-10px] after:top-[55%] after:-translate-[50%] before:content-[""] before:bg-[#bfbfbf] before:absolute before:w-[1px] before:h-[20px] before:right-[-10px] before:top-[55%] before:-translate-[50%]'>Terms & Condition</h5>
             <h5>Sitemap</h5>
           </div>
         </div>

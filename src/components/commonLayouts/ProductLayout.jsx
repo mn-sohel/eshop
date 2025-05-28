@@ -26,7 +26,7 @@ const ProductLayout = ({
     // console.log(ratingValue);
     
   return (
-    <div style={{background: bg}} className={`border border-transparent hover:border-[#C3C3C3] duration-300 ${padding} ${className} group rounded-lg`}>
+    <div style={{background: bg}} className={`border border-transparent ${border} hover:border-[#C3C3C3] duration-300 ${padding} ${className} group rounded-lg`}>
         <div className='relative '>
             <img className='w-full' src={img}  />
             {percentTag && (

@@ -101,7 +101,7 @@ const SpringSale = () => {
                 <div className='font-["Montserrat"] font-normal text-base leading-6 flex gap-[58px] mb-18'>
                     <span>Days</span><span>Hours</span><span>Minutes</span><span>Seconds</span> 
                 </div>
-                <Button text={"Shop Now"}/>
+                <Button text={"Shop Now"}  paddingY="16px" paddingX="40px"/>
             </div>
             <div className='max-w-[902px]'>
               <Slider {...settings} className='springGap'>
@@ -111,7 +111,7 @@ const SpringSale = () => {
                   ))
                 } */}
                   <ProductLayout
-                    className = "hover:!bg-[#fff]"
+                    className = "hover:!bg-[#fff]" 
                     img={"images/springBox.png"} 
                     percentTag={true} 
                     discountRetangle={false}

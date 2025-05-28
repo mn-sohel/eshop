@@ -113,7 +113,7 @@ const NewProduct = ({stock=false}) => {
             />
         </div>
         <div className='flex justify-center mt-20'>
-            <Button text="Load More" bg="transparent" border="1px solid #FF624C" color="#FF624C"/>
+            <Button text="Load More" bg="transparent" border="1px solid #FF624C" color="#FF624C" paddingY="16px" paddingX="40px"/>
         </div>
    
     </Container>

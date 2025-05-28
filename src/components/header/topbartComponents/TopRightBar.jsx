@@ -8,7 +8,7 @@ import ArrowDownIcon from '../../../icons/ArrowDownIcon';
 
 const TopRightBar = () => {
     const [selectedCountry, setSelectedCountry] =  useState(null);
-    const [isOpenLanguage, setIsOpenLanguage] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const [selectedCurrency, setSelectedCurrency] = useState(null);
     const [isOpenCurrency, setIsOpenCurrency] = useState(false);
     
@@ -18,7 +18,7 @@ const TopRightBar = () => {
         useEffect(() => {
           const handleClickOutSide = (event) => {
             if(countryDrowdownRef.current && !countryDrowdownRef.current.contains(event.target)){
-              setIsOpenLanguage(false)
+              setIsOpen(false)
             }
             if(currencyDrowdownRef.current && !currencyDrowdownRef.current.contains(event.target)){
               setIsOpenCurrency(false)
@@ -66,7 +66,7 @@ const TopRightBar = () => {
 
     const handleSelect = (country) => {
       setSelectedCountry(country)
-      setIsOpenLanguage(false) 
+      setIsOpen(false) 
     }
     // const handleSelectCurrency = (currency) => {
     //   selectedCurrency(currency)
@@ -88,7 +88,7 @@ const TopRightBar = () => {
               setSelectedCurrency(currency)
             }}
             >
-              {currencies.map((curr)=>(
+              {currencies.map((curr, index)=>(
                 <option key={curr?.code} value={curr?.code}>
                   {curr?.name}
                 </option>
@@ -107,8 +107,7 @@ const TopRightBar = () => {
               </span>
             </>
           ) : (
-            // setSelectedCurrency(currencies?.find((c) => c.code === "bdt"))
-            setSelectedCurrency(currencies?.find((c) => c.code === "usd"))
+            setSelectedCurrency(currencies?.find((c) => c.code === "bdt"))
           )}
           {/* option list for courrency */}
           {isOpenCurrency && (
@@ -121,8 +120,6 @@ const TopRightBar = () => {
                 key={curr?.code}
                 className="flex items-center gap-2 p-2 hover:bg-gray-100 hover:text-[#FF624C] cursor-pointer border-b border-b-gray-100 border-transparent hover:shadow-xl hover:border-r-[#FF624C] hover:border-l-[#FF624C] "
                 onClick={() => {
-                  console.log(curr);
-                  
                   setSelectedCurrency(curr);
                   setIsOpenCurrency(false)
                 }}
@@ -133,6 +130,8 @@ const TopRightBar = () => {
             </ul>
           )}
           <ArrowDownIcon/>
+
+          
         </div>
         <div 
         ref={countryDrowdownRef}
@@ -155,21 +154,21 @@ const TopRightBar = () => {
 
             {/* custom dropdown for language or country */}
             <div 
-              onClick={()=>setIsOpenLanguage(!isOpenLanguage)}
-              className='w-[175px] p-2 cursor-pointer flex items-center justify-between'
+              onClick={()=>setIsOpen(!isOpen)}
+              className='w-[175px] p-2 cursor-pointer flex items-center'
               >
                 {selectedCountry ?
                 <>
                   <img src={selectedCountry?.flag} alt={selectedCountry?.name} className='w-5 h-4 mr-2' />
                   <span className='mr-6'>{selectedCountry?.name}</span>
-                  <ArrowDownIcon />
+                  <ArrowDownIcon/>
                 </>
                 :
                 <span className='gap-3 flex items-center'>Select a country <ArrowDownIcon /></span>
               }
             </div>
             {/* option list for language or country */}
-            {isOpenLanguage && (
+            {isOpen && (
               <ul 
               className='absolute w-full border border-gray-300 bg-white shadow-lg z-10'>
                 {countries.map((country) => (

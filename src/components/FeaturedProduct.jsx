@@ -5,22 +5,74 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
-import { HiOutlineArrowLongRight } from 'react-icons/hi2';
+import { HiOutlineArrowLongRight, HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi2';
 
  function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   
   return (
 
-  <div className={className} style={{ ...style, color:"#303030", fontSize:"20px", width:"40px", height:"40px", borderRadius:"50%", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #303030" }} onClick={onClick}><FaAngleRight /></div>
+  <div 
+    className={`${className} grid place-items-center`} 
+    style={{ 
+      ...style, 
+      zIndex: "999",
+      borderRadius:"50%", 
+      border: "1px solid #303030", 
+      right: "-40px",
+      marginLeft: "10px", 
+      display: "flex",
+      background: "#fff", 
+      width:"40px", 
+      height:"40px", 
+      cursor: "pointer",
+      // color:"#303030",
+      // fontSize:"20px", 
+      // justifyContent: "center", 
+      // alignItems: "center", 
+    }} 
+    onClick={onClick}
+    >
+      <HiOutlineChevronRight
+        size={16}
+        color="#303030"
+        className=" absolute top-[50%] left-[50%] -translate-[50%]"
+        />
+    </div>
   );
 }
 
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-
-    <div className={className} style={{ ...style, color:"#303030", fontSize:"20px", width:"40px", height:"40px", borderRadius:"50%", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #303030" }} onClick={onClick}><FaAngleLeft /></div>
+    
+    <div 
+    className={`${className} grid place-items-center`}
+    style={{ 
+      ...style,
+      zIndex: "999",
+      left: "-50px",
+      marginLeft: "10px", 
+      display: "flex", 
+      background: "#fff", 
+      width:"40px", 
+      height:"40px", 
+      borderRadius:"50%", 
+      border: "1px solid #303030",
+      cursor: "pointer", 
+      // color:"#303030", 
+      // fontSize:"20px", 
+      // justifyContent: "center", 
+      // alignItems: "center", 
+      }} 
+      onClick={onClick}
+      >
+        <HiOutlineChevronLeft
+        size={16}
+        color="#303030 "
+        className=" absolute top-[50%] left-[50%] -translate-[50%]"
+      />
+    </div>
   );
 }
 
@@ -52,7 +104,7 @@ const FeaturedProduct = ({stock=false}) => {
               <HiOutlineArrowLongRight />
             </div>
         </div>
-        <Slider {...settings}>
+        <Slider className='pb-20 mx-10 feature_product_slide' {...settings}>
             <ProductLayout 
               img={"images/productImage.png"} 
               percentTag={false} 
