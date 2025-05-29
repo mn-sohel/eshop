@@ -9,47 +9,60 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
-// const springSaleData = [
-//   {
-//     img={"images/springBox.png"}, 
-//     percentTag={true}, 
-//     discountRetangle={false}
-//     discountCircle={true}
-//     percentage="10%" 
-//     category="TELEVISION" 
-//     title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB ..." 
-//     rating="5" 
-//     totalRating="100" 
-//     price="4599.00" 
-//     border={true} 
-//     // bg="transparent" 
-//     // bg={"#EAEAEA"} 
-//     bg={"#fff"} 
-//     stock={true} 
-//     stockAmount="50"
-//     padding={"p-10"}
-//   }
-// ]
-
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   
   return (
-
-  <div className={className} style={{ ...style, color:"#303030", fontSize:"20px", width:"40px", height:"40px", borderRadius:"50%", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #303030" }} onClick={onClick}><FaAngleRight /></div>
+  <div 
+    className={className} 
+    style={{ 
+      ...style, 
+      color:"#303030", 
+      fontSize:"20px", 
+      width:"40px", 
+      height:"40px", 
+      borderRadius:"50%", 
+      display: "flex", 
+      justifyContent: "center", 
+      alignItems: "center", 
+      border: "1px solid #303030" 
+    }} 
+    onClick={onClick}
+    >
+      <FaAngleRight /></div>
   );
 }
 
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-
-    <div className={className} style={{ ...style, color:"#303030", fontSize:"20px", width:"40px", height:"40px", borderRadius:"50%", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #303030" }} onClick={onClick}><FaAngleLeft /></div>
+    <div 
+      className={className} 
+      style={{ 
+        ...style, 
+        color:"#303030", 
+        fontSize:"20px", 
+        width:"40px", 
+        height:"40px", 
+        borderRadius:"50%", 
+        display: "flex", 
+        justifyContent: "center", 
+        alignItems: "center", 
+        border: "1px solid #303030" 
+      }} 
+      onClick={onClick}
+      >
+        <FaAngleLeft /></div>
   );
 }
 
 const SpringSale = () => {
+  const productDetails = [
+    {
+      
+    }
+  ]
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     function calculateTimeLeft() {
