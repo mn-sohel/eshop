@@ -96,7 +96,7 @@ const SpringSale = () => {
             <div>
                 <h2 className='font-["Poppins"] font-bold text-[56px] leading-17'>Spring Sale</h2>
                 <div className='text-[#FF624C] font-["Poppins"] font-semibold text-[36px] leading-[46px] flex gap-[38px] mt-8'>
-                    <span>{timeLeft.days}</span> : <span>{timeLeft.hours}</span> : <span>{timeLeft.minutes}</span> : <span>{timeLeft.seconds}</span> 
+                    <span>{timeLeft.days <= 9 ? `0${timeLeft.days}`: timeLeft.days}</span> : <span>{timeLeft.hours <= 9 ? `0${timeLeft.hours}`: timeLeft.hours}</span> : <span>{timeLeft.minutes <=9 ? `0${timeLeft.minutes}`:timeLeft.minutes}</span> : <span>{timeLeft.seconds <= 9 ? `0${timeLeft.seconds}`: timeLeft.seconds}</span> 
                 </div>
                 <div className='font-["Montserrat"] font-normal text-base leading-6 flex gap-[58px] mb-18'>
                     <span>Days</span><span>Hours</span><span>Minutes</span><span>Seconds</span> 
