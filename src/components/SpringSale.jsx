@@ -7,7 +7,7 @@ import Button from './Button';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import NextArrowIcon from '../icons/NextArrowIcon';
 
 
 function SampleNextArrow(props) {
@@ -20,8 +20,8 @@ function SampleNextArrow(props) {
       ...style, 
       color:"#303030", 
       fontSize:"20px", 
-      width:"40px", 
-      height:"40px", 
+      width:"72px", 
+      height:"72px", 
       borderRadius:"50%", 
       display: "flex", 
       justifyContent: "center", 
@@ -30,43 +30,18 @@ function SampleNextArrow(props) {
     }} 
     onClick={onClick}
     >
-      <FaAngleRight /></div>
+      <NextArrowIcon/>
+  </div>
   );
 }
 
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div 
-      className={className} 
-      style={{ 
-        ...style, 
-        color:"#303030", 
-        fontSize:"20px", 
-        width:"40px", 
-        height:"40px", 
-        borderRadius:"50%", 
-        display: "flex", 
-        justifyContent: "center", 
-        alignItems: "center", 
-        border: "1px solid #303030" 
-      }} 
-      onClick={onClick}
-      >
-        <FaAngleLeft /></div>
-  );
-}
 
 const SpringSale = () => {
-  const productDetails = [
-    {
-      
-    }
-  ]
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  
+    const [timerLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     function calculateTimeLeft() {
-        const saleEndDate = new Date('May 30, 2025 10:00 PM +06').getTime();
+        const saleEndDate = new Date('May 31, 2025 05:35 PM +06').getTime();
         const now = new Date().getTime();
         const difference = saleEndDate - now;
         // console.log(difference);
@@ -93,30 +68,58 @@ const SpringSale = () => {
     var settings = {
     dots: false,
     infinite: true,
-    speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />,
-    // autoplay: true,
+    autoplay: true,
+    speed: 1500,
     autoplaySpeed: 1000,
+    nextArrow: <SampleNextArrow />,
+    pauseOnHover: true,
+    // prevArrow: <SamplePrevArrow />,
   };
 
   return (
-    <div className='mt-[80px] bg-cover bg-no-repeat' style={{background: "url('images/springBg.png')"}}>
+    <div className="bg-[#F4F4F4] py-16 mt-20">
       <Container>
-        <div className='flex justify-between items-center pt-16 pb-16'>
-            <div>
+        <div className='flex justify-between gap-32 relative'>
+            <div className="mt-43">
                 <h2 className='font-["Poppins"] font-bold text-[56px] leading-17'>Spring Sale</h2>
-                <div className='text-[#FF624C] font-["Poppins"] font-semibold text-[36px] leading-[46px] flex gap-[38px] mt-8'>
-                    <span>{timeLeft.days <= 9 ? `0${timeLeft.days}`: timeLeft.days}</span> : <span>{timeLeft.hours <= 9 ? `0${timeLeft.hours}`: timeLeft.hours}</span> : <span>{timeLeft.minutes <=9 ? `0${timeLeft.minutes}`:timeLeft.minutes}</span> : <span>{timeLeft.seconds <= 9 ? `0${timeLeft.seconds}`: timeLeft.seconds}</span> 
-                </div>
-                <div className='font-["Montserrat"] font-normal text-base leading-6 flex gap-[58px] mb-18'>
-                    <span>Days</span><span>Hours</span><span>Minutes</span><span>Seconds</span> 
-                </div>
-                <Button text={"Shop Now"}  paddingY="16px" paddingX="40px"/>
+                <div>
+              <div className="font-['Poppins'] font-semibold leading-[46px] text-4xl text-[#FF624C] flex gap-6 text-center pt-10 pb-18 ">
+                <p>
+                  <span>{timerLeft.days <= 9 ? `0${timerLeft.days}` : timerLeft.days}</span>
+                  <span className="text-[#303030] font-['Montserrat'] font-normal text-base leading-6 block ">
+                    Days
+                  </span>
+                </p>
+                :
+                <p>
+                  <span>{timerLeft.hours <= 9 ? `0${timerLeft.hours}` : timerLeft.hours}</span>
+                  <span className="text-[#303030] font-['Montserrat'] font-normal text-base leading-6 block ">
+                    Hours
+                  </span>
+                </p>
+                :
+                <p>
+                  <span>{timerLeft.minutes <= 9 ? `0${timerLeft.minutes}` : timerLeft.minutes}</span>
+                  <span className="text-[#303030] font-['Montserrat'] font-normal text-base leading-6 block ">
+                    Minutes
+                  </span>
+                </p>
+                :
+                <p>
+                  <span>{timerLeft.seconds <= 9 ? `0${timerLeft.seconds}` : timerLeft.seconds}</span>
+                  <span className="text-[#303030] font-['Montserrat'] font-normal text-base leading-6 block ">
+                    Seconds
+                  </span>
+                </p>
+              </div>
             </div>
-            <div className='max-w-[902px]'>
+            <div>
+                <Button text={"Shop Now"}  paddingY="16px" paddingX="40px" size="20px"/>
+            </div>
+            </div>
+            <div className='max-w-[992px] mr-10 '> 
               <Slider {...settings} className='springGap'>
                 {/* {
                   springSaleData.map((item,index) => (
@@ -125,7 +128,8 @@ const SpringSale = () => {
                 } */}
                   <ProductLayout
                     className = "hover:!bg-[#fff]" 
-                    img={"images/springBox.png"} 
+                    img={"images/springBox.png"}
+                    hoverBorderColor={"hover:border-transparent"} 
                     percentTag={true} 
                     discountRetangle={false}
                     discountCircle={true}
@@ -143,7 +147,8 @@ const SpringSale = () => {
                     />
                   <ProductLayout 
                   className = "hover:!bg-[#fff]"
-                    img={"images/springBox.png"} 
+                    img={"images/springBox.png"}
+                    hoverBorderColor={"hover:border-transparent"}  
                     percentTag={true} 
                     discountRetangle={false}
                     discountCircle={true}
@@ -162,6 +167,7 @@ const SpringSale = () => {
                   <ProductLayout 
                     className = "hover:!bg-[#fff]"
                     img={"images/springBox.png"} 
+                    hoverBorderColor={"hover:border-transparent"} 
                     percentTag={false} 
                     category="LAPTOP" 
                     title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB ..." 
@@ -175,34 +181,39 @@ const SpringSale = () => {
                     padding={"p-10"}
                   />
                   <ProductLayout 
+                      className = "hover:!bg-[#fff]"
+                      img={"images/springBox.png"} 
+                      hoverBorderColor={"hover:border-transparent"} 
+                      percentTag={false} category="CAMERA" 
+                      title="VBI Mini 2 Fly More Combo Drone Sjrc F22S 4K Pro Ptz 5 Km Version Alpha ..." 
+                      rating="1" 
+                      totalRating="70" 
+                      price="79.00" 
+                      border={true}  
+                      bg="#EAEAEA"
+                      stock={true} 
+                      stockAmount="LIMITED STOCK"
+                      padding={"p-10"}
+                    />
+                  <ProductLayout 
                     className = "hover:!bg-[#fff]"
                     img={"images/springBox.png"} 
-                    percentTag={false} category="CAMERA" 
-                    title="VBI Mini 2 Fly More Combo Drone Sjrc F22S 4K Pro Ptz 5 Km Version Alpha ..." 
-                    rating="1" 
-                    totalRating="70" 
-                    price="79.00" 
+                    hoverBorderColor={"hover:border-transparent"} 
+                    percentTag={false} 
+                    category="TELEVISION"  
+                    title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB ..." 
+                    rating="2" totalRating="20" 
+                    price="2799.00" 
                     border={true}  
                     bg="#EAEAEA"
                     stock={true} 
-                    stockAmount="LIMITED STOCK"
+                    stockAmount="50"
                     padding={"p-10"}
-                    />
-                  <ProductLayout 
-                  className = "hover:!bg-[#fff]"
-                  img={"images/springBox.png"} 
-                  percentTag={false} 
-                  category="TELEVISION"  
-                  title="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB ..." 
-                  rating="2" totalRating="20" 
-                  price="2799.00" 
-                  border={true}  
-                  bg="#EAEAEA"
-                  stock={true} 
-                  stockAmount="50"
-                  padding={"p-10"}
                   />
               </Slider>
+            </div>
+            <div className=" absolute bottom-0 left-0 ">
+              < img src="./images/springSaleShape.svg" alt="" />
             </div>
             
         </div>
