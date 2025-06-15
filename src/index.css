@@ -15,3 +15,23 @@
 .springGap.slick-slider .slick-track {
   @apply flex gap-6;
 }
+
+input[type=range]::-webkit-slider-thumb{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #FF624C;
+  pointer-events: auto;
+  cursor: pointer;
+  appearance: none;
+}
+
+/* input[type=range]::-moz-range-thumb{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #FF624C;
+  pointer-events: auto;
+  cursor: pointer;
+  appearance: none;
+} */
