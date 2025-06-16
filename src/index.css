@@ -26,7 +26,7 @@ input[type=range]::-webkit-slider-thumb{
   appearance: none;
 }
 
-/* input[type=range]::-moz-range-thumb{
+input[type=range]::-moz-range-thumb{
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -34,4 +34,4 @@ input[type=range]::-webkit-slider-thumb{
   pointer-events: auto;
   cursor: pointer;
   appearance: none;
-} */
+}

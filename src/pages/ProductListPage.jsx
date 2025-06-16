@@ -4,7 +4,7 @@ import ProductLayout from '../components/commonLayouts/ProductLayout';
 import Pagination from '../components/Pagination';
 
 const ProductListPage = () => {
-  let [minValue, setMinValue] = useState(0);
+  let [minValue, setMinValue] = useState(100);
   let [maxValue, setMaxValue] = useState(1000);
   let [currentPage, setCurrentPage] = useState(1);
   
@@ -14,11 +14,20 @@ const ProductListPage = () => {
     if(type == 'min'){
         const newMin = Math.min(parseInt(value), maxValue)
         setMinValue(newMin)
-    }else{
+      }else{
         const newMax = Math.max(parseInt(value), minValue)
         setMaxValue(newMax)
     }
   }
+  const updateRange = (type, value) => {
+    if (type == "min") {
+      const newMin = Math.min(parseInt(value), maxValue);
+      setMinValue(newMin);
+    } else if(value <= 1000){
+      const newMax = Math.max(parseInt(value), minValue);
+      setMaxValue(newMax);
+    }
+  };
 
   const minPercent = (minValue / 1000) * 100
   const maxPercent = (maxValue / 1000) * 100
@@ -39,15 +48,16 @@ const ProductListPage = () => {
         <div className='w-[355px] bg-[#F4F4F4] rounded-[25px] p-12'>
           <h3 className='font-["Montserrat"] font-bold text-xl'>Price</h3>
           <div className='w-full mt-12'>
-            <div className='flex justify-between mb-5'>
-              <span>Min: ${minValue}</span>
-              <span>Max: ${maxValue}</span>
+            <div className='flex gap-[11px] mb-5'>
+              <span className='border border-[#C3C3C3] rounded-[10px] px-[41px] py-[25px]'>${minValue}</span>
+              <span className='border border-[#C3C3C3] rounded-[10px] px-[32px] py-[25px]'>${maxValue}</span>
             </div>
             <div className='relative w-full h-[2px] bg-[#E8E8E8] rounded'>
               <div 
                 className='absolute h-full bg-red-500 rounded'
                 style={{left: `${minPercent}%`, width: `${maxPercent - minPercent}%`}}
-                ></div>
+                > 
+              </div>
               <input 
                 type="range"
                 min="0"
