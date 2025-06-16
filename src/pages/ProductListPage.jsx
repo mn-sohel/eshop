@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Container from '../components/commonLayouts/Container'
 import ProductLayout from '../components/commonLayouts/ProductLayout';
 import Pagination from '../components/Pagination';
+import ProductCategories from '../components/productPage/ProductCategories';
 
 const ProductListPage = () => {
   let [minValue, setMinValue] = useState(100);
@@ -19,15 +20,6 @@ const ProductListPage = () => {
         setMaxValue(newMax)
     }
   }
-  const updateRange = (type, value) => {
-    if (type == "min") {
-      const newMin = Math.min(parseInt(value), maxValue);
-      setMinValue(newMin);
-    } else if(value <= 1000){
-      const newMax = Math.max(parseInt(value), minValue);
-      setMaxValue(newMax);
-    }
-  };
 
   const minPercent = (minValue / 1000) * 100
   const maxPercent = (maxValue / 1000) * 100
@@ -44,8 +36,9 @@ const ProductListPage = () => {
 
   return (
     <Container>
-      <div className='flex'>
+      <div className='flex mt-[64px]'>
         <div className='w-[355px] bg-[#F4F4F4] rounded-[25px] p-12'>
+          <ProductCategories/>
           <h3 className='font-["Montserrat"] font-bold text-xl'>Price</h3>
           <div className='w-full mt-12'>
             <div className='flex gap-[11px] mb-5'>
