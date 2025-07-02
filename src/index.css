@@ -35,3 +35,23 @@ input[type=range]::-moz-range-thumb{
   cursor: pointer;
   appearance: none;
 }
+
+.customcheck{
+  width: 16px;
+  height: 16px;
+  border: 1px solid #303030;
+  border-radius: 2px;
+}
+
+.customcheck span{
+  opacity: 0;
+}
+
+.targetinput:checked + .customcheck{
+  background: #FF624C;
+  border-color: #FF624C
+}
+
+.targetinput:checked + .customcheck span{
+  opacity: 1;
+}

@@ -4,13 +4,13 @@ import ProductLayout from "../components/commonLayouts/ProductLayout";
 import Pagination from "../components/Pagination";
 import { Bounce, toast } from "react-toastify";
 import PriceRange from "../components/PriceRange";
+import ProductListSidebarContent from "../components/ProductListSidebarContent";
+import CustomCheckBox from "../components/CustomCheckBox";
 
 const ProductListPage = () => {
   let [currentPage, setCurrentPage] = useState(1);
 
   const itemsPerPage = 10;
-
- 
 
   const products = Array.from({ length: 160 }, (_, index) => ({
     id: index + 1,
@@ -27,7 +27,29 @@ const ProductListPage = () => {
     <Container>
       <div className="flex mt-[64px]">
         <div className="w-[355px] bg-[#F4F4F4] rounded-[25px] p-12">
-          <PriceRange/>
+          <ProductListSidebarContent>
+            <div className="relative after:absolute after:bottom-[-40px] after:left-0 after:w-full after:h-[1px] after:content[''] after:bg-[#B7B7B7]">
+              <CustomCheckBox text="Computers & Tablets" />
+              <CustomCheckBox text="Mobile & Accessories" />
+              <CustomCheckBox text="TV & Home Theater" />
+              <CustomCheckBox text="Audio & Headphones" />
+              <CustomCheckBox text="Cameras & Camcorders" />
+              <CustomCheckBox text="Gaming Equipment" />
+              <CustomCheckBox text="Home Appliances" />
+            </div>
+          </ProductListSidebarContent>
+          <ProductListSidebarContent title="Brands">
+            <div className="relative after:absolute after:bottom-[-40px] after:left-0 after:w-full after:h-[1px] after:content[''] after:bg-[#B7B7B7]">
+              <CustomCheckBox text="Apple" />
+              <CustomCheckBox text="Samsung" />
+              <CustomCheckBox text="ASUS" />
+              <CustomCheckBox text="Dell" />
+              <CustomCheckBox text="Lenovo" />
+              <CustomCheckBox text="HP" />
+              <CustomCheckBox text="Panasonic" />
+            </div>
+          </ProductListSidebarContent>
+          <PriceRange />
         </div>
         <div className="w-[80%]">
           <div className="flex gap-1 flex-wrap">
@@ -47,14 +69,13 @@ const ProductListPage = () => {
                 />
               </div>
             ))}
-           
           </div>
-           <Pagination
-              totalItems={products.length}
-              itemsPerPage={itemsPerPage}
-              currentPage={currentPage}
-              onPageChange={setCurrentPage}
-            />
+          <Pagination
+            totalItems={products.length}
+            itemsPerPage={itemsPerPage}
+            currentPage={currentPage}
+            onPageChange={setCurrentPage}
+          />
         </div>
       </div>
     </Container>
