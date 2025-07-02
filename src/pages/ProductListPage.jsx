@@ -10,7 +10,7 @@ const ProductListPage = () => {
   let [maxValue, setMaxValue] = useState(1000);
   let [currentPage, setCurrentPage] = useState(1);
 
-  const itemsPerPage = 16;
+  const itemsPerPage = 10;
 
   const updateSlider = (type, value) => {
     const parseValue = parseInt(value);
@@ -155,13 +155,14 @@ const ProductListPage = () => {
                 />
               </div>
             ))}
-            <Pagination
+           
+          </div>
+           <Pagination
               totalItems={products.length}
               itemsPerPage={itemsPerPage}
               currentPage={currentPage}
               onPageChange={setCurrentPage}
             />
-          </div>
         </div>
       </div>
     </Container>
