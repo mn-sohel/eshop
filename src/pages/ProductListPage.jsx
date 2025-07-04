@@ -25,33 +25,39 @@ const ProductListPage = () => {
 
   return (
     <Container>
-      <div className="flex mt-[64px]">
-        <div className="w-[355px] bg-[#F4F4F4] rounded-[25px] p-12">
-          <ProductListSidebarContent>
-            <div className="relative after:absolute after:bottom-[-40px] after:left-0 after:w-full after:h-[1px] after:content[''] after:bg-[#B7B7B7]">
-              <CustomCheckBox text="Computers & Tablets" />
-              <CustomCheckBox text="Mobile & Accessories" />
-              <CustomCheckBox text="TV & Home Theater" />
-              <CustomCheckBox text="Audio & Headphones" />
-              <CustomCheckBox text="Cameras & Camcorders" />
-              <CustomCheckBox text="Gaming Equipment" />
-              <CustomCheckBox text="Home Appliances" />
-            </div>
-          </ProductListSidebarContent>
-          <ProductListSidebarContent title="Brands">
-            <div className="relative after:absolute after:bottom-[-40px] after:left-0 after:w-full after:h-[1px] after:content[''] after:bg-[#B7B7B7]">
-              <CustomCheckBox text="Apple" />
-              <CustomCheckBox text="Samsung" />
-              <CustomCheckBox text="ASUS" />
-              <CustomCheckBox text="Dell" />
-              <CustomCheckBox text="Lenovo" />
-              <CustomCheckBox text="HP" />
-              <CustomCheckBox text="Panasonic" />
-            </div>
-          </ProductListSidebarContent>
-          <PriceRange />
+      <div className="flex mt-16 gap-x-[50px]">
+        <div className="w-[355px] relative">
+          <div className="bg-[#F4F4F4] rounded-[25px] p-12 sticky top-0">
+            <ProductListSidebarContent>
+              <div className="relative after:absolute after:bottom-[-40px] after:left-0 after:w-full after:h-[1px] after:content[''] after:bg-[#B7B7B7]">
+                <CustomCheckBox text="Computers & Tablets" />
+                <CustomCheckBox text="Mobile & Accessories" />
+                <CustomCheckBox text="TV & Home Theater" />
+                <CustomCheckBox text="Audio & Headphones" />
+                <CustomCheckBox text="Cameras & Camcorders" />
+                <CustomCheckBox text="Gaming Equipment" />
+                <CustomCheckBox text="Home Appliances" />
+              </div>
+            </ProductListSidebarContent>
+            <ProductListSidebarContent title="Brands">
+              <div className="relative after:absolute after:bottom-[-40px] after:left-0 after:w-full after:h-[1px] after:content[''] after:bg-[#B7B7B7]">
+                <CustomCheckBox text="Apple" />
+                <CustomCheckBox text="Samsung" />
+                <CustomCheckBox text="ASUS" />
+                <CustomCheckBox text="Dell" />
+                <CustomCheckBox text="Lenovo" />
+                <CustomCheckBox text="HP" />
+                <CustomCheckBox text="Panasonic" />
+              </div>
+            </ProductListSidebarContent>
+            <PriceRange />
+          </div>
         </div>
-        <div className="w-[80%]">
+        <div className="w-[80%] relative">
+          <h2 className="font-['Poppins'] font-semibold text-[36px] mb-[30px]">
+            Products
+          </h2>
+            <div className="bg-red-400 flex justify-end">dfdfdf</div>
           <div className="flex gap-1 flex-wrap">
             {currentProducts.map((item, index) => (
               <div className="w-[24%]" key={index}>
@@ -70,12 +76,14 @@ const ProductListPage = () => {
               </div>
             ))}
           </div>
-          <Pagination
-            totalItems={products.length}
-            itemsPerPage={itemsPerPage}
-            currentPage={currentPage}
-            onPageChange={setCurrentPage}
-          />
+          <div className="flex justify-center">
+            <Pagination
+              totalItems={products.length}
+              itemsPerPage={itemsPerPage}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
+            />
+          </div>
         </div>
       </div>
     </Container>

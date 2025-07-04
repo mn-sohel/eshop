@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 const Pagination = ({totalItems, itemsPerPage, currentPage, onPageChange}) => {
+
+    let [active, setActive] = useState(1);
 
     const totalPages = Math.ceil(totalItems / itemsPerPage)
     const maxPagesToShow = 7;
@@ -26,54 +29,40 @@ const Pagination = ({totalItems, itemsPerPage, currentPage, onPageChange}) => {
                 pages.push("...")
             }
         }
-
     }
 
-
-    // const pagesToShowBeforeAfter = 3
-
-    // let startPage = Math.max(1, currentPage - pagesToShowBeforeAfter)
-    // let endPage = Math.min(totalPages, currentPage + pagesToShowBeforeAfter)
-
-    // if(endPage - startPage + 1 < maxPagesToShow){
-    //     if(startPage > 1){
-    //         startPage = Math.max(1, endPage - maxPagesToShow + 1)
-    //     }
-    //     endPage = Math.min(totalPages, startPage + maxPagesToShow - 1)
-    // }
-
-    // const pageNumbers = []
-    // for(let i = startPage; i <= endPage; i++){
-    //     pageNumbers.push(i)
-    // }
-
+    let handleClick = (number) => {
+        onPageChange(number)
+        setActive(number)
+    }
 
   return (
     <div className='flex items-center justify-center p-4'>
         <button
-            onClick={()=> onPageChange(currentPage - 1)}
+            onClick={()=> handleClick(currentPage - 1)}
             disabled={currentPage === 1}
-            className='px-3 py-1 rounded bg-gray-300 disabled:opacity-50 hover:bg-gray-500 cursor-pointer'
+            className='cursor-pointer'
         >
-            &lt;
+            <FaAngleLeft />
         </button>
 
         {pages.map((number,index)=>(
             <button
                 key={index}
-                onClick={()=> onPageChange(number)}
-                className='px-3 py-1 mx-2 rounded bg-gray-300 disabled:opacity-50 hover:bg-gray-500 cursor-pointer'
+                // onClick={()=> onPageChange(number)}
+                onClick={()=>handleClick(number)}
+                className={`px-3 py-1 mx-2 rounded disabled:opacity-50 ${active == number && "bg-[#FF624C] text-white"} hover:bg-[#FF624C] hover:text-white cursor-pointer`}
             >{number}</button>
         ))}
         
         <button
-            onClick={()=> onPageChange(currentPage + 1)}
+            onClick={()=> handleClick(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className='px-3 py-1 rounded bg-gray-300 disabled:opacity-50 hover:bg-gray-500 cursor-pointer'
+            className='cursor-pointer'
         >
-            &gt;
+            <FaAngleRight />
         </button>
-        <span>
+        <span className='numbers'>
             showing {currentPage * itemsPerPage} of {totalItems} resutlts
         </span>
 

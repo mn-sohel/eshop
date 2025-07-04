@@ -55,3 +55,9 @@ input[type=range]::-moz-range-thumb{
 .targetinput:checked + .customcheck span{
   opacity: 1;
 }
+
+.numbers{
+  position: absolute;
+  top: 82px;
+  left: 8px;
+}
