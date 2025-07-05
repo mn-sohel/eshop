@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Button from './Button';
 
 
-const NewProduct = ({stock=false}) => {
+const NewProduct = ({stock=false, heading="New Products"}) => {
 
   return (
 
@@ -15,7 +15,7 @@ const NewProduct = ({stock=false}) => {
   
         <div className='flex justify-between mb-12'>
             <div>
-              <h2 className='font-["Poppins"] font-semibold text-[36px]'>New Products</h2>
+              <h2 className='font-["Poppins"] font-semibold text-[36px]'>{heading}</h2>
             </div>
             <div className='flex items-center gap-2 text-[#FF624C]'>
               <p className='text-[#303030]'>Sort By</p>
