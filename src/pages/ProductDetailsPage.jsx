@@ -345,7 +345,7 @@ const ProductDetailsPage = () => {
 
       {/* description part from here */}
       <div>
-        <div className="flex gap-[35px] mb-12">
+        <div className="flex gap-[35px] mb-12 mt-10">
           <h4
             className={`${
               descriptionActive && "border-b border-solid border-red-500"
